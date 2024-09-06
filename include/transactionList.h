@@ -1,4 +1,5 @@
 #include "transaction.h"
+#include <vector>
 
 // add smart pointers and use vectors later, now just raw pointers
 
@@ -15,7 +16,7 @@ public:
 
 private:
     TransactionList();
-    Transaction* m_Transactions;
+    std::vector<Transaction> m_Transactions;
     unsigned int m_size;
     unsigned int m_capacity;
 

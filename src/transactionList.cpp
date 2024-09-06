@@ -1,13 +1,14 @@
 #include "transactionList.h"
+#include <vector>
+
 using namespace std;
 
 TransactionList::TransactionList(const unsigned int& capacity) : m_capacity(capacity){
- m_Transactions = new Transaction[m_capacity];
+ m_Transactions.resize(capacity);
  m_size = 0;
 }
 
 TransactionList::TransactionList(){
-    delete[] m_Transactions;    
 }
 
 int TransactionList::addTransaction(const Transaction& transaction) {

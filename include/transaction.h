@@ -18,9 +18,11 @@ enum categoryType{
 class Transaction{
     public:
     //default constructor
-    Transaction();
+    Transaction() = default;
     //normal constructor
     Transaction(const dateType& date, const categoryType& category, const int& amount, const std::string& description);
+    //destructor
+    ~Transaction(){};
     //getter functions
     const dateType& getDate() const;
     const int& getAmount() const;
@@ -30,8 +32,6 @@ class Transaction{
     void setAmount(const int& amount);
     void setCategory(const categoryType& category);
     void setDescription(const std::string& description);
-    //destructor
-    ~Transaction(){};
     void transactionDetails();
     private:
     //member variables
