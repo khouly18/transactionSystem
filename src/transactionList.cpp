@@ -1,4 +1,4 @@
-#include "TransactionList.h"
+#include "transactionList.h"
 using namespace std;
 
 TransactionList::TransactionList(const unsigned int& capacity) : m_capacity(capacity){
@@ -18,9 +18,12 @@ int TransactionList::addTransaction(const Transaction& transaction) {
     else
     {
         m_Transactions[m_size].setAmount(transaction.getAmount());
+        return 0;
     }
 }
 void TransactionList::removeTransaction(unsigned int index) {};
-Transaction TransactionList::getTransaction(unsigned int index) const {};
+Transaction TransactionList::getTransaction(unsigned int index) const {
+    return m_Transactions[index];
+}
 void TransactionList::displayTransaction(unsigned int index) {};
 void TransactionList::displayAllTransactions() {};
