@@ -5,17 +5,17 @@
 
 class TransactionList {
 public:
-    TransactionList(const unsigned int& capacity);
+    TransactionList() = delete;
+    explicit TransactionList(const unsigned int& capacity);
     int addTransaction(const Transaction& transaction);
-    void removeTransaction(unsigned int index);
-    Transaction getTransaction(unsigned int index) const;
-    void displayTransaction(unsigned int index);
+    int removeTransaction(const unsigned int index);
+    Transaction getTransaction(const unsigned int index) const;
+    void displayTransaction(const unsigned int index);
     void displayAllTransactions();
-    ~TransactionList();
+    ~TransactionList() = default;
 
 
 private:
-    TransactionList();
     std::vector<Transaction> m_Transactions;
     unsigned int m_size;
     unsigned int m_capacity;

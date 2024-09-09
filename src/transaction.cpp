@@ -1,5 +1,14 @@
 #include "transaction.h"
-using namespace std;
+using std::cout;
+using std::ostream;
+using std::operator<<;
+using std::string;
+using std::endl;
+
+ostream& operator<< (ostream& dateStream, const dateType& rhs){
+    dateStream<<rhs.day<<'.'<<rhs.month<<'.'<<rhs.year;
+    return dateStream;
+}
 
 const int& Transaction::getAmount() const{
     return this->m_amount;

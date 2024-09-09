@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 
+using std::ostream;
+
 // add custom operators later for copying = and printing <<
 
 struct dateType{
@@ -8,6 +10,8 @@ struct dateType{
     int month;
     int year;
 };
+
+ostream& operator<< (ostream&, const dateType&);
 
 enum categoryType{
     CATEGORY_A,
@@ -18,9 +22,9 @@ enum categoryType{
 class Transaction{
     public:
     //default constructor
-    Transaction() = default;
+    Transaction() = delete;
     //normal constructor
-    Transaction(const dateType& date, const categoryType& category, const int& amount, const std::string& description);
+    explicit Transaction(const dateType& date, const categoryType& category, const int& amount, const std::string& description);
     //destructor
     ~Transaction(){};
     //getter functions
@@ -33,6 +37,8 @@ class Transaction{
     void setCategory(const categoryType& category);
     void setDescription(const std::string& description);
     void transactionDetails();
+    
+    
     private:
     //member variables
     dateType m_date;
